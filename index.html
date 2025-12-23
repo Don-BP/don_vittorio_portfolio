@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vittorio Zumpano | HR Systems Architect</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid" id="bg-grid"></div>
+    <div class="bg-noise"></div>
+
+    <div class="app-wrapper">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside>
+            <div class="sidebar-brand">
+                <div class="profile-frame">
+                    <img src="profile.png" alt="Vittorio Zumpano">
+                </div>
+                <div class="profile-name">Vittorio Zumpano <br><span>(Don)</span></div>
+            </div>
+
+            <!-- LANGUAGE SWITCHER -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <div class="lang-divider"></div>
+                <button class="lang-btn" data-lang="jp">JP</button>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link active" data-section="0">
+                        <i class="fas fa-home"></i> <span data-t="nav-home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#stats" class="nav-link" data-section="1">
+                        <i class="fas fa-chart-line"></i> <span data-t="nav-impact">Impact</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#recruitment" class="nav-link" data-section="2">
+                        <i class="fas fa-user-plus"></i> <span data-t="nav-recruitment">Recruitment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#operations" class="nav-link" data-section="3">
+                        <i class="fas fa-microchip"></i> <span data-t="nav-systems">Systems</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#management" class="nav-link" data-section="4">
+                        <i class="fas fa-calendar-alt"></i> <span data-t="nav-management">Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#compliance" class="nav-link" data-section="5">
+                        <i class="fas fa-shield-halved"></i> <span data-t="nav-compliance">Compliance</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#culture" class="nav-link" data-section="6">
+                        <i class="fas fa-users"></i> <span data-t="nav-culture">Culture</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ecosystem" class="nav-link" data-section="7">
+                        <i class="fas fa-cubes"></i> <span data-t="nav-ecosystem">Ecosystem</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-section="8">
+                        <i class="fas fa-tools"></i> <span data-t="nav-skills">Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link" data-section="9">
+                        <i class="fas fa-history"></i> <span data-t="nav-timeline">Timeline</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link" data-section="10">
+                        <i class="fas fa-graduation-cap"></i> <span data-t="nav-education">Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="11">
+                        <i class="fas fa-envelope"></i> <span data-t="nav-contact">Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span data-t="progress-label">Interview Progress</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main id="main-scroller">
+
+            <!-- SECTION 1: HERO -->
+            <section id="hero" class="active">
+                <div class="content-reveal">
+                    <h3 data-t="hero-tag">Innovation in Human Capital</h3>
+                    <h1 data-t="hero-heading">Transforming HR <br>Through Technology</h1>
+                    <p data-t="hero-desc">Vittorio Zumpano — Bridging the gap between HR Operations and Technical
+                        Automation to build
+                        scalable, high-performance employee ecosystems.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#stats" class="btn" data-t="hero-btn-begin">Begin Experience</a>
+                        <a href="https://bplabo.jp" target="_blank" class="btn btn-outline"
+                            data-t="hero-btn-visit">Visit Live App</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: STATS DASHBOARD -->
+            <section id="stats">
+                <div class="content-reveal">
+                    <h3 data-t="stats-tag">01. Strategic Impact</h3>
+                    <h2 data-t="stats-heading">Quantifiable Results</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="9">0</span>
+                            <span class="stat-label" data-t="stat-1">Years HR Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="15">0</span>
+                            <span class="stat-label" data-t="stat-2">Proprietary Systems Built</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="60">0</span>
+                            <span class="stat-label" data-t="stat-3">Employees Managed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="100">0</span>
+                            <span class="stat-label" data-t="stat-4">% Process Automation</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="8">0</span>
+                            <span class="stat-label" data-t="stat-5">Connected Web Apps</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-val="1">0</span>
+                            <span class="stat-label" data-t="stat-6">Gemini AI Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: RECRUITMENT -->
+            <section id="recruitment">
+                <div class="grid">
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="rec-tag">02. Talent Acquisition</h3>
+                        <h2 data-t="rec-heading">End-to-End Digital Recruitment</h2>
+                        <p data-t="rec-desc">Engineered a robust, end-to-end recruitment ecosystem that revolutionized
+                            talent acquisition.
+                            By building custom submission and collection pipelines, I streamlined the screening process
+                            for international candidates, reducing administrative overhead by 60%.</p>
+                        <div class="tag-container">
+                            <span class="tag" data-t="rec-tag-1">Workflow Automation</span>
+                            <span class="tag" data-t="rec-tag-2">Cloud Infrastructure</span>
+                            <span class="tag" data-t="rec-tag-3">Strategic Hiring</span>
+                        </div>
+                    </div>
+                    <div class="visual-frame">
+                        <div class="card-frame" style="width: 100%;">
+                            <img src="hiring_form.jpg" alt="Automated Hiring Workflow">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: OPERATIONS -->
+            <section id="operations">
+                <div class="grid reversed">
+                    <div class="visual-frame">
+                        <!-- Positioning wrappers protect offsets from being overwritten by JS tilt -->
+                        <div
+                            style="position: absolute; width: 75%; transform: translate(-20%, -20%) rotate(-5deg); z-index: 1;">
+                            <div class="card-frame">
+                                <img src="omw_sheet.jpg" alt="Attendance Backend">
+                            </div>
+                        </div>
+                        <div
+                            style="position: absolute; width: 65%; transform: translate(15%, 15%) rotate(5deg); z-index: 2;">
+                            <div class="card-frame">
+                                <img src="omw_app.jpg" alt="Mobile Check-in Application">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="sys-tag">03. Logistics & Safety</h3>
+                        <h2 data-t="sys-heading">Real-Time Presence Tracking</h2>
+                        <p data-t="sys-desc">Engineered a proprietary "On My Way" (OMW) tracker to manage a diverse,
+                            remote workforce.
+                            Integrating Google Apps Script with real-time data visualization, the system automatically
+                            flags exceptions, ensuring 100% accountability and operational safety.</p>
+                        <div class="tag-container">
+                            <span class="tag" data-t="sys-tag-1">Mobile Web Apps</span>
+                            <span class="tag" data-t="sys-tag-2">Apps Script</span>
+                            <span class="tag" data-t="sys-tag-3">Real-time Data</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: MANAGEMENT -->
+            <section id="management">
+                <div class="grid">
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="man-tag">04. Workforce Management</h3>
+                        <h2 data-t="man-heading">Enterprise Scheduling Ecosystem</h2>
+                        <p data-t="man-desc">Architected a comprehensive Workforce Management Hub (ALT Dashboard)
+                            integrating
+                            sophisticated scheduling logic and automated time-off engines. The system features proactive
+                            conflict detection and coverage heatmaps, empowering management with data-driven decision
+                            tools.</p>
+                        <div class="tag-container">
+                            <span class="tag" data-t="man-tag-1">Dashboard Design</span>
+                            <span class="tag" data-t="man-tag-2">Logic Engines</span>
+                            <span class="tag" data-t="man-tag-3">Conflict Resolution</span>
+                        </div>
+                    </div>
+                    <div class="visual-frame">
+                        <div style="position: absolute; top: 0; left: 0; width: 80%; z-index: 1;">
+                            <div class="card-frame">
+                                <img src="calendar.jpg" alt="Dynamic Scheduling System">
+                            </div>
+                        </div>
+                        <div
+                            style="position: absolute; bottom: 0; right: 0; width: 55%; z-index: 2; transform: translateY(20px);">
+                            <div class="card-frame">
+                                <img src="time-off.jpg" alt="Automated Leave Management">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: COMPLIANCE -->
+            <section id="compliance">
+                <div class="grid reversed">
+                    <div class="visual-frame">
+                        <div class="card-frame" style="width: 100%;">
+                            <img src="Timesheet.jpg" alt="Payroll Compliance System">
+                        </div>
+                    </div>
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="com-tag">05. Compliance & Payroll</h3>
+                        <h2 data-t="com-heading">Administrative Integrity</h2>
+                        <p data-t="com-desc">Digitized complex legal workflows for visa documentation and tax
+                            adjustments with
+                            precision-engineered administrative portals. Automated timesheet collection and validation
+                            reduced processing time while maintaining 100% accuracy for cross-border compliance.</p>
+                        <div class="tag-container">
+                            <span class="tag" data-t="com-tag-1">Tax Automation</span>
+                            <span class="tag" data-t="com-tag-2">Legal Compliance</span>
+                            <span class="tag" data-t="com-tag-3">Payroll Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: CULTURE -->
+            <section id="culture">
+                <div class="grid">
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="cul-tag">06. Culture & Engagement</h3>
+                        <h2 data-t="cul-heading">The Unified Communications Hub</h2>
+                        <p data-t="cul-desc">Integrated a dynamic internal communications engine into the core employee
+                            dashboard to
+                            foster engagement and professional growth. Facilitates transparent news delivery,
+                            performance assessment feedback loops, and streamlined support systems.</p>
+                        <div class="tag-container">
+                            <span class="tag" data-t="cul-tag-1">Internal Comms</span>
+                            <span class="tag" data-t="cul-tag-2">News Engine</span>
+                            <span class="tag" data-t="cul-tag-3">Employee Growth</span>
+                        </div>
+                    </div>
+                    <div class="visual-frame">
+                        <!-- Prominent dashboard with news overlay -->
+                        <div style="position: absolute; width: 85%; top: 0; left: 0; z-index: 1;">
+                            <div class="card-frame">
+                                <img src="dashboard.jpg" alt="Core Resource Dashboard">
+                            </div>
+                        </div>
+                        <div
+                            style="position: absolute; width: 60%; bottom: 0; right: 0; z-index: 2; transform: translateY(20px);">
+                            <div class="card-frame">
+                                <img src="new.jpg" alt="Integrated News Engine">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: ECOSYSTEM -->
+            <section id="ecosystem">
+                <div class="grid reversed">
+                    <div class="visual-frame">
+                        <div class="card-frame" style="width: 120%; transform: rotateY(-15deg); margin-left: -10%;">
+                            <img src="bplabo.jpg" alt="Full Resource Ecosystem">
+                        </div>
+                    </div>
+                    <div class="content-reveal stagger-1">
+                        <div class="login-hub">
+                            <h2 data-t="eco-heading">The AI-Powered Ecosystem</h2>
+                            <p data-t="eco-desc">Experience the full scope of my work, including 8 proprietary apps
+                                integrated with Gemini
+                                AI technology and secure user authentication.</p>
+
+                            <div class="cred-box">
+                                <span data-t="eco-user">USER</span>: Guest269<br>
+                                <span data-t="eco-pass">PASS</span>: password
+                            </div>
+
+                            <a href="https://bplabo.jp" target="_blank" class="btn" data-t="eco-btn">Launch Enterprise
+                                System</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: SKILLS MATRIX -->
+            <section id="skills">
+                <div class="content-reveal">
+                    <h3 data-t="ski-tag">07. Expertise</h3>
+                    <h2 data-t="ski-heading">Technical Skills & AI Proficiency Matrix</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <h4 data-t="ski-cat-1">Web Development</h4>
+                            <ul class="skill-list">
+                                <li data-t="ski-list-1-item-1">HTML5 / CSS3 / ES6+ JS</li>
+                                <li data-t="ski-list-1-item-2">Google Apps Script</li>
+                                <li data-t="ski-list-1-item-3">Web App Architecture</li>
+                                <li data-t="ski-list-1-item-4">Responsive Design / PWA</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h4 data-t="ski-cat-2">Data & Backend</h4>
+                            <ul class="skill-list">
+                                <li data-t="ski-list-2-item-1">Sheets as Database</li>
+                                <li data-t="ski-list-2-item-2">SQL Concepts & Queries</li>
+                                <li data-t="ski-list-2-item-3">Data Validation / APIs</li>
+                                <li data-t="ski-list-2-item-4">Automated Reporting</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cloud"></i>
+                            <h4 data-t="ski-cat-3">Cloud Platforms</h4>
+                            <ul class="skill-list">
+                                <li data-t="ski-list-3-item-1">Google Workspace Ecosystem</li>
+                                <li data-t="ski-list-3-item-2">Cloud Deployment</li>
+                                <li data-t="ski-list-3-item-3">OAuth / Webhook Integration</li>
+                                <li data-t="ski-list-3-item-4">Gmail & Drive APIs</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <h4 data-t="ski-cat-4">AI & Automation</h4>
+                            <ul class="skill-list">
+                                <li data-t="ski-list-4-item-1">AI Integration</li>
+                                <li data-t="ski-list-4-item-2">Workflow Optimization</li>
+                                <li data-t="ski-list-4-item-3">Process Automation</li>
+                                <li data-t="ski-list-4-item-4">Script Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: TIMELINE -->
+            <section id="timeline">
+                <div class="content-reveal">
+                    <h3 data-t="tim-tag">08. Professional Evolution</h3>
+                    <h2 data-t="tim-heading">Career Milestones</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-item active">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2016 - 2025</span>
+                                <h4 data-t="tim-company-1">Brain Power Co. Ltd.</h4>
+                                <span class="timeline-role" data-t="tim-role-1">HR Manager & Systems Developer</span>
+                                <p data-t="tim-desc-1">Promoted to Manager/Trainer, Built 8-app platform, Achieved 100%
+                                    automation of key HR
+                                    processes.</p>
+                                <div class="tag-container">
+                                    <span class="tag" data-t="tag-dev">Full-stack Dev</span>
+                                    <span class="tag" data-t="tag-hr">HR Management</span>
+                                    <span class="tag" data-t="tag-ai">AI Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Can add previous roles if available in resume.pdf, for now focusing on the key one -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2001 - 2016</span>
+                                <h4 data-t="tim-edu-h">Education & Early Career</h4>
+                                <span class="timeline-role" data-t="tim-role-2">International Educator &
+                                    Professional</span>
+                                <p data-t="tim-desc-2">Established foundational communication and organizational skills
+                                    in international
+                                    environments across Japan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 11: EDUCATION -->
+            <section id="education">
+                <div class="grid">
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="edu-tag">09. Academic Foundation</h3>
+                        <h2 data-t="edu-heading">Education & Credentials</h2>
+                        <div class="edu-card">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <h4 data-t="edu-uni">York University</h4>
+                                <p data-t="edu-deg">Bachelor of Arts (BA) | 1997 - 2001</p>
+                                <span data-t="edu-focus">Focus: Economics & Office Management</span>
+                            </div>
+                        </div>
+                        <div class="edu-card">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4 data-t="edu-cert-h">Professional Certifications</h4>
+                                <p data-t="edu-cert-1">CompTIA A+ Certification (IT Professional)</p>
+                                <p data-t="edu-cert-2">Microsoft Office Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-reveal stagger-2">
+                        <h3 data-t="lan-tag">Expertise</h3>
+                        <h2 data-t="lan-heading">Bilingual Capability</h2>
+                        <div class="lang-grid">
+                            <div class="lang-item">
+                                <span data-t="lan-en">English</span>
+                                <div class="lang-bar">
+                                    <div class="lang-fill" style="width: 100%;"></div>
+                                </div>
+                                <span class="lang-label" data-t="lan-en-l">Native</span>
+                            </div>
+                            <div class="lang-item">
+                                <span data-t="lan-jp">Japanese</span>
+                                <div class="lang-bar">
+                                    <div class="lang-fill" style="width: 65%;"></div>
+                                </div>
+                                <span class="lang-label" data-t="lan-jp-l">Casual - Business Professional</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-size: 0.95rem;" data-t="lan-desc">Bilingual capability enables
+                            seamless
+                            communication with Japanese staff and international team members.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 12: CONTACT -->
+            <section id="contact">
+                <div class="grid">
+                    <div class="content-reveal stagger-1">
+                        <h3 data-t="con-tag">10. Social Proof</h3>
+                        <h2 data-t="con-heading">Recommendations</h2>
+                        <div class="quote-card restricted">
+                            <i class="fas fa-quote-left"></i>
+                            <div class="restriction-badge">
+                                <i class="fas fa-lock"></i> <span data-t="con-rest">Please do not contact yet</span>
+                            </div>
+                            <p data-t="con-quote">"Available upon request from Joseph Portin, Manager at Brain Power Co.
+                                Ltd."</p>
+                            <div class="quote-footer">
+                                <strong data-t="con-name">Joseph Portin</strong>
+                                <span data-t="con-manager">Manager, Brain Power Co. Ltd.</span>
+                                <span data-t="con-contact-info">06-4256-6601 | joseph@brain-power.co.jp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-reveal stagger-2">
+                        <h3 data-t="con-link-tag">Let's Connect</h3>
+                        <h2 data-t="con-link-h">Contact Information</h2>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <i class="fas fa-user"></i>
+                                <span data-t="con-person">Vittorio Zumpano</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-t="con-loc">Suita-shi, Osaka, Japan</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span data-t="con-phone">080-5336-8486</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span data-t="con-email">osakadon@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-instagram"></i>
+                                <span data-t="con-instagram">@osaka.don</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px; display: flex; gap: 15px;">
+                            <a href="mailto:vitoz@hotmail.com" class="btn" data-t="con-btn">Reach Out via Email</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
