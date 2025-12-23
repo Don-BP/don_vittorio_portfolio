@@ -883,9 +883,13 @@ section.active .content-reveal {
         scroll-snap-align: none;
     }
 
+    .content-reveal {
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
     .grid {
         grid-template-columns: 1fr !important;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
 
@@ -903,11 +907,11 @@ section.active .content-reveal {
     }
 
     h1 {
-        font-size: clamp(2.2rem, 8vw, 3rem);
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
     }
 
     h2 {
-        font-size: clamp(1.8rem, 6vw, 2.2rem);
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
     }
 
     .stats-grid {
@@ -917,21 +921,36 @@ section.active .content-reveal {
 
     .visual-frame {
         height: auto;
-        min-height: 200px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        perspective: none;
+        margin-bottom: 30px;
+    }
+
+    /* Neutralize inline absolute positioning and transforms for mobile */
+    .visual-frame>div {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        z-index: 1 !important;
     }
 
     .card-frame {
-        position: relative !important;
         width: 100% !important;
         transform: none !important;
-        margin-bottom: 20px !important;
-        top: auto !important;
-        left: auto !important;
+        margin-bottom: 0 !important;
     }
 
     /* Background Tuning */
     .bg-orb {
-        opacity: 0.4;
+        opacity: 0.3;
         filter: blur(60px);
     }
 

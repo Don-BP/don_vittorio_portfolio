@@ -7,30 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- INTERSECTION OBSERVER ---
     const observerOptions = {
-        threshold: 0.2
+        threshold: 0.15 // Lower threshold for better mobile detection
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Activate Section
-                sections.forEach(s => s.classList.remove('active'));
                 entry.target.classList.add('active');
 
-                // Update Sidebar Links
-                const sectionId = entry.target.id;
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Update Progress Bar
+                // Update nav links based on what's in view
                 const index = Array.from(sections).indexOf(entry.target);
-                const progress = Math.round(((index + 1) / sections.length) * 100);
+                navLinks.forEach(link => link.classList.remove('active'));
+                navLinks[index].classList.add('active');
+
+                // Update progress bar
+                const progress = ((index + 1) / sections.length) * 100;
                 progressFill.style.width = `${progress}%`;
-                progressText.innerText = `${progress}%`;
+                progressText.innerText = `${index + 1}`; // Assuming progressText should show the current section number
 
                 // Trigger Stats Animation
                 if (entry.target.id === 'stats') {
