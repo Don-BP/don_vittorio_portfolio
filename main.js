@@ -42,12 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(sec => observer.observe(sec));
 
+    // --- MOBILE NAVIGATION TOGGLE ---
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const aside = document.querySelector('aside');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    const toggleSidebar = () => {
+        aside.classList.toggle('active');
+        overlay.classList.toggle('active');
+        const icon = mobileToggle.querySelector('i');
+        if (aside.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    };
+
+    mobileToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
     // --- SIDEBAR NAVIGATION (SMOOTH SCROLL) ---
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
+
+            // Close sidebar on mobile after click
+            if (aside.classList.contains('active')) {
+                toggleSidebar();
+            }
+
             targetSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
