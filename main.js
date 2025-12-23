@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'con-person': 'Vittorio Zumpano',
             'con-loc': 'Suita-shi, Osaka, Japan',
             'con-phone': '080-5336-8486',
-            'con-email': 'vitoz@hotmail.com',
+            'con-email': 'osakadon@gmail.com',
             'con-instagram': '@osaka.don',
             'con-btn': 'Reach Out via Email'
         },
@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'con-person': 'Vittorio Zumpano',
             'con-loc': '日本、大阪府吹田市',
             'con-phone': '080-5336-8486',
-            'con-email': 'vitoz@hotmail.com',
+            'con-email': 'osakadon@gmail.com',
             'con-instagram': '@osaka.don',
             'con-btn': 'メールでお問い合わせ'
         }
