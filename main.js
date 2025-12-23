@@ -101,10 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3D TILT EFFECT REFINED ---
     const handleTilt = (e) => {
         const cards = document.querySelectorAll('.card-frame');
+        const isTouch = e.type === 'touchmove';
+        const clientX = isTouch ? e.touches[0].clientX : e.clientX;
+        const clientY = isTouch ? e.touches[0].clientY : e.clientY;
 
         cards.forEach(card => {
-            // Only tilt if the section is active to save performance
-            if (!card.closest('section').classList.contains('active')) {
+            const section = card.closest('section');
+            if (!section.classList.contains('active')) {
                 card.style.transform = `rotateX(0deg) rotateY(0deg)`;
                 return;
             }
@@ -113,35 +116,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardCenterX = rect.left + rect.width / 2;
             const cardCenterY = rect.top + rect.height / 2;
 
-            const mouseX = e.clientX - cardCenterX;
-            const mouseY = e.clientY - cardCenterY;
+            const x = clientX - cardCenterX;
+            const y = clientY - cardCenterY;
 
-            // Sensitivity - Tilt based on distance from center
-            const tiltX = (mouseY / (window.innerHeight / 2)) * -15; // Max 15 deg
-            const tiltY = (mouseX / (window.innerWidth / 2)) * 15;   // Max 15 deg
+            // Subtle tilt for mobile/desktop
+            const tiltFactor = window.innerWidth < 900 ? 10 : 15;
+            const tiltX = (y / (window.innerHeight / 2)) * -tiltFactor;
+            const tiltY = (x / (window.innerWidth / 2)) * tiltFactor;
 
-            card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+            card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
         });
     };
 
     window.addEventListener('mousemove', handleTilt);
+    window.addEventListener('touchmove', handleTilt, { passive: false });
 
     // --- ORB & GRID PARALLAX ---
-    window.addEventListener('mousemove', (e) => {
+    const handleBackgroundParallax = (e) => {
+        const isTouch = e.type === 'touchmove';
+        const pageX = isTouch ? e.touches[0].pageX : e.pageX;
+        const pageY = isTouch ? e.touches[0].pageY : e.pageY;
+
         const orb1 = document.querySelector('.orb-1');
         const orb2 = document.querySelector('.orb-2');
         const grid = document.getElementById('bg-grid');
 
-        const moveX = (window.innerWidth / 2 - e.pageX) / 50;
-        const moveY = (window.innerHeight / 2 - e.pageY) / 50;
+        const moveX = (window.innerWidth / 2 - pageX) / 40;
+        const moveY = (window.innerHeight / 2 - pageY) / 40;
 
-        // Orbs move in opposite directions for depth
-        orb1.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        orb2.style.transform = `translate(${-moveX * 1.5}px, ${-moveY * 1.5}px)`;
+        if (orb1) orb1.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        if (orb2) orb2.style.transform = `translate(${-moveX * 1.5}px, ${-moveY * 1.5}px)`;
+        if (grid) grid.style.transform = `translate(${moveX / 2}px, ${moveY / 2}px)`;
+    };
 
-        // Grid shifts subtly
-        grid.style.transform = `translate(${moveX / 2}px, ${moveY / 2}px)`;
-    });
+    window.addEventListener('mousemove', handleBackgroundParallax);
+    window.addEventListener('touchmove', handleBackgroundParallax, { passive: true });
 
     // --- TRANSLATION LOGIC ---
     const translations = {

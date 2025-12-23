@@ -929,43 +929,113 @@ section.active .content-reveal {
         margin-bottom: 30px;
     }
 
-    /* Neutralize inline absolute positioning and transforms for mobile */
+    /* Re-introduce "Visual WOW" for Mobile */
+    .bg-orb {
+        opacity: 0.6;
+        filter: blur(40px);
+        animation: orbFloat 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes orbFloat {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(10vw, 10vh) scale(1.1);
+        }
+    }
+
+    .visual-frame {
+        height: auto;
+        min-height: 400px;
+        /* Give space for layered elements */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        perspective: 1200px;
+        margin-bottom: 20px;
+        padding: 40px 0;
+    }
+
+    /* Layered Stacking instead of flat stacking */
     .visual-frame>div {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        z-index: 1 !important;
+        position: absolute !important;
+        /* Back to absolute but controlled */
+        width: 80% !important;
+        transform: none;
+        /* JS will handle tilt */
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #operations .visual-frame>div:first-child {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: rotate(-3deg) translateY(0);
+    }
+
+    #operations .visual-frame>div:last-child {
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 70% !important;
+        transform: rotate(3deg) translateY(20px);
+    }
+
+    #management .visual-frame {
+        min-height: 480px;
+    }
+
+    #management .visual-frame>div:first-child {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 75% !important;
+        transform: rotate(2deg) translateY(0);
+    }
+
+    #management .visual-frame>div:last-child {
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 55% !important;
+        transform: rotate(-3deg) translateY(40px) translateX(10px);
+    }
+
+    #culture .visual-frame>div:first-child {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: rotate(-1deg) translateY(0);
+    }
+
+    #culture .visual-frame>div:last-child {
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 60% !important;
+        transform: rotate(4deg) translateY(25px);
     }
 
     .card-frame {
         width: 100% !important;
-        transform: none !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* Background Tuning */
-    .bg-orb {
-        opacity: 0.3;
-        filter: blur(60px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 210, 255, 0.1);
+        border: 1px solid rgba(0, 210, 255, 0.3);
     }
 
     .orb-1 {
-        width: 120vw;
-        height: 120vw;
-        top: -30vh;
-        left: -20vw;
+        width: 140vw;
+        height: 140vw;
+        top: -40vh;
+        left: -30vw;
     }
 
     .orb-2 {
-        width: 100vw;
-        height: 100vw;
-        bottom: -20vh;
-        right: -20vw;
+        width: 120vw;
+        height: 120vw;
+        bottom: -30vh;
+        right: -30vw;
     }
 }
 
