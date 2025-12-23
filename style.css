@@ -788,16 +788,103 @@ section.active .content-reveal {
 }
 
 @media (max-width: 900px) {
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin-inline: auto;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+    }
+
     aside {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        z-index: 1100;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    aside.active {
+        left: 0;
+    }
+
+    /* Show labels on mobile when sidebar is active */
+    aside.active .nav-link span {
+        display: inline !important;
+    }
+
+    aside.active .nav-link i {
+        margin-right: 12px;
+        font-size: 1.1rem;
+    }
+
+    .mobile-toggle {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+        background: var(--primary);
+        color: var(--bg);
+        border: none;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        z-index: 1200;
+        cursor: pointer;
+        box-shadow: 0 0 20px var(--primary-glow);
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px var(--primary-glow);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        z-index: 1050;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     main {
         width: 100vw;
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 100px 24px 60px;
+        min-height: auto;
+        height: auto;
+        scroll-snap-align: none;
     }
 
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 40px;
         text-align: center;
     }
@@ -812,120 +899,15 @@ section.active .content-reveal {
 
     p {
         margin-inline: auto;
+        font-size: 1rem;
     }
 
-    /* Mobile Toggle Button */
-    .mobile-toggle {
-        display: flex;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: var(--sidebar-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 12px;
-        color: var(--primary);
-        font-size: 1.5rem;
-        z-index: 1000;
-        cursor: pointer;
-        backdrop-filter: blur(10px);
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
+    h1 {
+        font-size: clamp(2.2rem, 8vw, 3rem);
     }
 
-    .mobile-toggle:hover {
-        background: var(--glass);
-        border-color: var(--primary);
-        box-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    /* Mobile Sidebar Adjustments */
-    aside {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        /* Hidden by default on mobile */
-        width: 280px;
-        height: 100vh;
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
-    }
-
-    aside.active {
-        left: 0;
-        /* Slide in */
-    }
-
-    /* Overlay when sidebar is open */
-    .sidebar-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
-        z-index: 99;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-    }
-
-    .sidebar-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    main {
-        width: 100vw;
-    }
-
-    section {
-        padding: 80px 20px 40px;
-        min-height: auto;
-        /* Allow sections to grow if content is tall */
-        height: auto;
-        scroll-snap-align: none;
-        /* Disable snap on mobile for smoother browsing */
-    }
-
-    .grid {
-        gap: 30px;
-    }
-
-    .visual-frame {
-        height: auto;
-        min-height: 250px;
-        margin-bottom: 20px;
-    }
-
-    .card-frame {
-        position: relative !important;
-        width: 100% !important;
-        transform: none !important;
-        margin: 0 auto 15px !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-    }
-
-    #operations .visual-frame div,
-    #management .visual-frame div,
-    #culture .visual-frame div {
-        position: relative !important;
-        width: 100% !important;
-        transform: none !important;
-        margin-bottom: 15px;
-    }
-
-    #ecosystem .card-frame {
-        width: 100% !important;
-        margin-left: 0 !important;
-        transform: none !important;
+    h2 {
+        font-size: clamp(1.8rem, 6vw, 2.2rem);
     }
 
     .stats-grid {
@@ -933,74 +915,38 @@ section.active .content-reveal {
         gap: 15px;
     }
 
-    .stat-card {
-        padding: 20px 10px;
+    .visual-frame {
+        height: auto;
+        min-height: 200px;
     }
 
-    .stat-num {
-        font-size: 1.8rem;
+    .card-frame {
+        position: relative !important;
+        width: 100% !important;
+        transform: none !important;
+        margin-bottom: 20px !important;
+        top: auto !important;
+        left: auto !important;
     }
 
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline-container {
-        padding-left: 25px;
-    }
-
-    .timeline-dot {
-        left: -31px;
-    }
-
-    .edu-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .contact-item {
-        font-size: 0.95rem;
-    }
-
-    /* Background Polish for Mobile */
+    /* Background Tuning */
     .bg-orb {
-        filter: blur(80px);
-        /* Reduce blur for mobile performance */
+        opacity: 0.4;
+        filter: blur(60px);
     }
 
     .orb-1 {
-        width: 100vw;
-        height: 100vw;
-        top: -20vh;
-        left: -10vw;
+        width: 120vw;
+        height: 120vw;
+        top: -30vh;
+        left: -20vw;
     }
 
     .orb-2 {
-        width: 80vw;
-        height: 80vw;
-        bottom: -15vh;
-        right: -10vw;
-    }
-
-    .bg-grid {
-        background-size: 30px 30px;
-        /* Denser grid for mobile */
-        opacity: 0.3;
-    }
-
-    /* Image Scaling Fix */
-    img {
-        max-width: 100%;
-        height: auto;
+        width: 100vw;
+        height: 100vw;
+        bottom: -20vh;
+        right: -20vw;
     }
 }
 
