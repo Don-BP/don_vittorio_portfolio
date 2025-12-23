@@ -961,11 +961,24 @@ section.active .content-reveal {
     /* Layered Stacking instead of flat stacking */
     .visual-frame>div {
         position: absolute !important;
-        /* Back to absolute but controlled */
         width: 80% !important;
         transform: none;
-        /* JS will handle tilt */
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #recruitment .visual-frame {
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #recruitment .visual-frame>div {
+        position: relative !important;
+        /* Overriding to relative to prevent overlap in Sec 2 */
+        width: 90% !important;
+        transform: rotate(2deg) translateY(20px) !important;
+        margin: 0 auto;
     }
 
     #operations .visual-frame>div:first-child {
